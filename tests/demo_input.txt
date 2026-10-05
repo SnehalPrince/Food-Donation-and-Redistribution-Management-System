@@ -1,0 +1,33 @@
+1
+D001
+MAIT Canteen
+canteen@mait.edu
+Canteen
+3
+DON101
+D001
+Cooked Meals
+1
+50
+
+2026-10-07
+2
+R001
+Community Shelter
+shelter@community.org
+Sector 14
+5
+REQ101
+R001
+1
+30
+1
+7
+1
+8
+DEL001
+1
+11
+1
+12
+13

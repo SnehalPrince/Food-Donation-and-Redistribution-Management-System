@@ -9,11 +9,13 @@ ifeq ($(OS),Windows_NT)
   MKDIR = if not exist "$(subst /,\,$(1))" mkdir "$(subst /,\,$(1))"
   RMDIR = if exist "$(subst /,\,$(1))" rmdir /s /q "$(subst /,\,$(1))"
   RM = if exist "$(subst /,\,$(1))" del /f /q "$(subst /,\,$(1))"
+  RUN_BIN = $(subst /,\,$(1))
 else
   EXE =
   MKDIR = mkdir -p "$(1)"
   RMDIR = rm -rf "$(1)"
   RM = rm -f "$(1)"
+  RUN_BIN = $(1)
 endif
 
 SRCS = Date.cpp InputHelper.cpp Person.cpp Donor.cpp Recipient.cpp \
@@ -52,32 +54,32 @@ check-headers: | $(BUILD_DIR)
 TEST_PEOPLE_OBJS = $(BUILD_DIR)/Person.o $(BUILD_DIR)/Donor.o $(BUILD_DIR)/Recipient.o
 test-people: $(BUILD_DIR) $(TEST_PEOPLE_OBJS)
 	$(CXX) $(CXXFLAGS) tests/test_people.cpp $(TEST_PEOPLE_OBJS) -o $(BUILD_DIR)/test_people$(EXE)
-	$(BUILD_DIR)/test_people$(EXE)
+	$(call RUN_BIN,$(BUILD_DIR)/test_people$(EXE))
 
 TEST_FOOD_OBJS = $(BUILD_DIR)/Date.o $(BUILD_DIR)/FoodItem.o $(BUILD_DIR)/CookedFood.o $(BUILD_DIR)/PackagedFood.o $(BUILD_DIR)/Donation.o
 test-food: $(BUILD_DIR) $(TEST_FOOD_OBJS)
 	$(CXX) $(CXXFLAGS) tests/test_food.cpp $(TEST_FOOD_OBJS) -o $(BUILD_DIR)/test_food$(EXE)
-	$(BUILD_DIR)/test_food$(EXE)
+	$(call RUN_BIN,$(BUILD_DIR)/test_food$(EXE))
 
 TEST_REQ_OBJS = $(BUILD_DIR)/Date.o $(BUILD_DIR)/RecipientRequest.o $(BUILD_DIR)/Delivery.o
 test-requests: $(BUILD_DIR) $(TEST_REQ_OBJS)
 	$(CXX) $(CXXFLAGS) tests/test_requests.cpp $(TEST_REQ_OBJS) -o $(BUILD_DIR)/test_requests$(EXE)
-	$(BUILD_DIR)/test_requests$(EXE)
+	$(call RUN_BIN,$(BUILD_DIR)/test_requests$(EXE))
 
 TEST_FILES_OBJS = $(filter-out $(BUILD_DIR)/main.o $(BUILD_DIR)/InputHelper.o,$(OBJS))
 test-files: $(BUILD_DIR) $(TEST_FILES_OBJS)
 	$(CXX) $(CXXFLAGS) tests/test_files.cpp $(TEST_FILES_OBJS) -o $(BUILD_DIR)/test_files$(EXE)
-	$(BUILD_DIR)/test_files$(EXE)
+	$(call RUN_BIN,$(BUILD_DIR)/test_files$(EXE))
 
 TEST_FB_OBJS = $(filter-out $(BUILD_DIR)/main.o $(BUILD_DIR)/InputHelper.o,$(OBJS))
 test-foodbank: $(BUILD_DIR) $(TEST_FB_OBJS)
 	$(CXX) $(CXXFLAGS) tests/test_foodbank.cpp $(TEST_FB_OBJS) -o $(BUILD_DIR)/test_foodbank$(EXE)
-	$(BUILD_DIR)/test_foodbank$(EXE)
+	$(call RUN_BIN,$(BUILD_DIR)/test_foodbank$(EXE))
 
 TEST_REP_OBJS = $(filter-out $(BUILD_DIR)/main.o $(BUILD_DIR)/InputHelper.o,$(OBJS))
 test-reports: $(BUILD_DIR) $(TEST_REP_OBJS)
 	$(CXX) $(CXXFLAGS) tests/test_reports.cpp $(TEST_REP_OBJS) -o $(BUILD_DIR)/test_reports$(EXE)
-	$(BUILD_DIR)/test_reports$(EXE)
+	$(call RUN_BIN,$(BUILD_DIR)/test_reports$(EXE))
 
 test: test-people test-food test-requests test-files test-foodbank test-reports
 	@echo ========================================
@@ -95,7 +97,8 @@ check-std:
 
 demo: all
 	@echo Running Viva Demo Scenario (Plan.md section 18)...
-	$(BUILD_DIR)/$(OUT)$(EXE) --today 2026-10-05 --data-dir tests/temp_demo_data < tests/demo_input.txt
+	@$(call MKDIR,tests/temp_demo_data)
+	$(call RUN_BIN,$(BUILD_DIR)/$(OUT)$(EXE)) --today 2026-10-05 --data-dir tests/temp_demo_data < tests/demo_input.txt
 
 asan:
 	@echo Building with Address and Undefined sanitizers...
