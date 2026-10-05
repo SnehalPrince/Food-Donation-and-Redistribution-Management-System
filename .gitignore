@@ -37,6 +37,8 @@ tests/robustness_input.txt
 # IDE & Editor specific files
 .vscode/
 .idea/
+.agents/
+skills-lock.json
 *.vcxproj*
 *.sln
 .vs/
