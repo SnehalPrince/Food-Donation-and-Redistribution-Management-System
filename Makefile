@@ -5,6 +5,8 @@ BUILD_DIR ?= build
 OUT ?= foodbank
 
 ifeq ($(OS),Windows_NT)
+  SHELL := cmd.exe
+  .SHELLFLAGS := /c
   EXE = .exe
   MKDIR = if not exist "$(subst /,\,$(1))" mkdir "$(subst /,\,$(1))"
   RMDIR = if exist "$(subst /,\,$(1))" rmdir /s /q "$(subst /,\,$(1))"
@@ -15,7 +17,7 @@ else
   MKDIR = mkdir -p "$(1)"
   RMDIR = rm -rf "$(1)"
   RM = rm -f "$(1)"
-  RUN_BIN = $(1)
+  RUN_BIN = ./$(1)
 endif
 
 SRCS = Date.cpp InputHelper.cpp Person.cpp Donor.cpp Recipient.cpp \
@@ -100,7 +102,7 @@ check-std:
 	@echo Zero warnings under both -std=c++11 and -std=c++17!
 
 demo: all
-	@echo Running Viva Demo Scenario (Plan.md section 18)...
+	@echo Running Viva Demo Scenario...
 	@$(call MKDIR,tests/temp_demo_data)
 	$(call RUN_BIN,$(BUILD_DIR)/$(OUT)$(EXE)) --today 2026-10-05 --data-dir tests/temp_demo_data < tests/demo_input.txt
 
