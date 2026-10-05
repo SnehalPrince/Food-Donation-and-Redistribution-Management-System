@@ -16,7 +16,6 @@ foodbank
 foodbank.exe
 foodbank_asan
 foodbank_asan.exe
-test_*
 
 # Debug symbols & profiling outputs
 *.pdb
