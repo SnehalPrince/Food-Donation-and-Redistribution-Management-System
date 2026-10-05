@@ -1,0 +1,3 @@
+D001|MAIT Canteen|canteen@mait.edu|Canteen
+D002|Sunrise Bakery|contact@sunrise.com|Bakery
+D003|Grand Plaza Hotel|chef@grandplaza.com|Restaurant

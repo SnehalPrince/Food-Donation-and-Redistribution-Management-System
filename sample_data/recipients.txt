@@ -1,0 +1,3 @@
+R001|Community Shelter|shelter@community.org|Sector 14
+R002|Hope Orphanage|contact@hopeorphanage.org|Block C
+R003|Elderly Care Home|care@elderlyhome.org|West Avenue
