@@ -81,7 +81,11 @@ test-reports: $(BUILD_DIR) $(TEST_REP_OBJS)
 	$(CXX) $(CXXFLAGS) tests/test_reports.cpp $(TEST_REP_OBJS) -o $(BUILD_DIR)/test_reports$(EXE)
 	$(call RUN_BIN,$(BUILD_DIR)/test_reports$(EXE))
 
-test: test-people test-food test-requests test-files test-foodbank test-reports
+test-e2e: all
+	$(CXX) $(CXXFLAGS) tests/test_e2e.cpp -o $(BUILD_DIR)/test_e2e$(EXE)
+	$(call RUN_BIN,$(BUILD_DIR)/test_e2e$(EXE))
+
+test: test-people test-food test-requests test-files test-foodbank test-reports test-e2e
 	@echo ========================================
 	@echo ALL UNIT AND MODULE TESTS PASSED
 	@echo ========================================
@@ -107,4 +111,8 @@ asan:
 clean:
 	@$(call RMDIR,$(BUILD_DIR))
 	@$(call RMDIR,tests/temp_demo_data)
+	@$(call RMDIR,tests/temp_test_data)
+	@$(call RMDIR,tests/temp_malformed_data)
+	@$(call RMDIR,tests/temp_e2e_data)
+	@$(call RMDIR,tests/temp_robustness)
 	@$(call RM,$(OUT)$(EXE))

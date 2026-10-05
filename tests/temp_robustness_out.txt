@@ -1,0 +1,77 @@
+====================================================
+Food Donation & Redistribution Management System
+Today: 2026-10-05 | Data Directory: tests/temp_robustness
+Loaded: 0 donors, 0 recipients, 0 donations, 0 requests, 0 deliveries.
+====================================================
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): Error: Please enter a valid integer. Try again.
+Enter choice (1-13): Error: Choice must be between 1 and 13. Try again.
+Enter choice (1-13): Error: Choice must be between 1 and 13. Try again.
+Enter choice (1-13): 
+--- Register Donor ---
+Enter Donor ID [D001]: Error: ID cannot contain '|'. Try again.
+Enter Donor ID [D001]: Enter Donor Name: Error: Input is too long (max 100 characters). Try again.
+Enter Donor Name: Enter Contact Info: Enter Source / Type (e.g. Restaurant, Canteen, Household): Error: Input cannot contain the pipe character ('|'). Try again.
+Enter Source / Type (e.g. Restaurant, Canteen, Household): Success: Donor D099 registered successfully.
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): 
+--- Add Food Donation ---
+Enter Donation ID [DON101]: Enter Donor ID: Enter Food Item Name: Select Food Category:
+  1. Cooked Food (COOKED)
+  2. Packaged Food (PACKAGED)
+  3. Bakery (BAKERY)
+  4. Fruits & Vegetables (PRODUCE)
+Enter choice (1-4): Enter Quantity (kg): Error: Value must be between 0.01 and 100000. Try again.
+Enter Quantity (kg): Error: Value must be between 0.01 and 100000. Try again.
+Enter Quantity (kg): Enter Preparation Date (YYYY-MM-DD) [2026-10-05]: Enter Expiry Date (YYYY-MM-DD): Error: Invalid date format or calendar date. Must be YYYY-MM-DD. Try again.
+Enter Expiry Date (YYYY-MM-DD): Success: Donation DON999 registered (25 kg of Bread).
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): You have unsaved changes. Save before exit? [Y/n]: Exiting Food Donation & Redistribution Management System. Goodbye!

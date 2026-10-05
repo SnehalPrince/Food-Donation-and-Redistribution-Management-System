@@ -1,0 +1,240 @@
+====================================================
+Food Donation & Redistribution Management System
+Today: 2026-10-05 | Data Directory: tests/temp_e2e_data
+Loaded: 0 donors, 0 recipients, 0 donations, 0 requests, 0 deliveries.
+====================================================
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): 
+--- Register Donor ---
+Enter Donor ID [D001]: Enter Donor Name: Enter Contact Info: Enter Source / Type (e.g. Restaurant, Canteen, Household): Success: Donor D001 registered successfully.
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): 
+--- Add Food Donation ---
+Enter Donation ID [DON101]: Enter Donor ID: Enter Food Item Name: Select Food Category:
+  1. Cooked Food (COOKED)
+  2. Packaged Food (PACKAGED)
+  3. Bakery (BAKERY)
+  4. Fruits & Vegetables (PRODUCE)
+Enter choice (1-4): Enter Quantity (kg): Enter Preparation Date (YYYY-MM-DD) [2026-10-05]: Enter Expiry Date (YYYY-MM-DD): Success: Donation DON101 registered (50 kg of Cooked Meals).
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): 
+--- Register Recipient Organization ---
+Enter Recipient ID [R001]: Enter Organization Name: Enter Contact Info: Enter Location: Success: Recipient Organization R001 registered successfully.
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): 
+--- Add Recipient Requirement ---
+Enter Request ID [REQ101]: Enter Recipient ID: Select Required Food Category:
+  1. Cooked Food (COOKED)
+  2. Packaged Food (PACKAGED)
+  3. Bakery (BAKERY)
+  4. Fruits & Vegetables (PRODUCE)
+Enter choice (1-4): Enter Required Quantity (kg): Select Priority:
+  1. High
+  2. Medium
+  3. Low
+Enter priority (1-3): Success: Request REQ101 registered successfully.
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): 
+--- Match Donation ---
+1. Match next pending request (queue order)
+2. Match a chosen request by ID
+3. Auto-match all pending requests
+Enter choice (1-3): 
+Result: Allocated 30 kg across 1 delivery record(s). Balance pending: 0 kg.
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): 
+--- Record Delivery ---
+Scheduled Deliveries in Transit:
+Delivery [DEL001] | Donation: DON101 | Request: REQ101 | Quantity: 30.00 kg | Scheduled: 2026-10-05 | Status: SCHEDULED
+
+Enter Delivery ID to update: Select Action:
+  1. Mark as DELIVERED (confirm receipt today)
+  2. Mark as CANCELLED (reverse reservation)
+Enter choice (1-2): Success: Delivery DEL001 confirmed as DELIVERED.
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): 
+--- Reports Sub-Menu ---
+1. Full Summary & SDG Impact Report
+2. Donor Ranking Report (Top Donors)
+3. Category-Wise Distribution Report
+4. Pending Requests Queue Report
+5. Expiring-Soon Donations Report
+Enter choice (1-5): 
+====================================================
+       FOOD REDISTRIBUTION SYSTEM SUMMARY REPORT    
+====================================================
+System Date: 2026-10-05
+
+--- INVENTORY & STOCK RECONCILIATION ---
+Total Food Donated:             50.00 kg
+Total Food Redistributed:       30.00 kg
+Food In-Transit (Reserved):      0.00 kg
+Available In Stock:             20.00 kg
+Expired / Wasted Food:           0.00 kg
+Net Remaining (Unredeemed):     20.00 kg
+Stock reconciliation: OK
+
+--- OPERATIONS & FULFILLMENT ---
+Total Recipient Requests:           1
+Fulfilled Requests:                 1
+Pending / Partial Requests:         0
+Fulfillment Rate:             100.00 %
+Total Completed Deliveries:         1
+
+--- SUSTAINABLE DEVELOPMENT GOALS (SDG) IMPACT ---
+[SDG 2: Zero Hunger - Target 2.1]
+  * Food Provided to People in Need: 30.00 kg
+  * Completed Food Relief Missions:  1
+  * Recipient Organizations Served:  1
+[SDG 12: Responsible Consumption - Target 12.3]
+  * Surplus Diverted from Landfill:  30.00 kg
+  * Surplus Lost to Spoilage/Expiry: 0.00 kg
+====================================================
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): Success: All data saved to 'tests/temp_e2e_data' successfully.
+
+=============================================
+   FOOD DONATION & REDISTRIBUTION SYSTEM     
+=============================================
+1. Register Donor
+2. Register Recipient
+3. Add Food Donation
+4. View Donations
+5. Add Recipient Requirement
+6. View Pending Requests
+7. Match Donation
+8. Record Delivery
+9. Search Records
+10. Show Expiring Donations
+11. Generate Summary Report
+12. Save Data
+13. Exit
+Enter choice (1-13): Exiting Food Donation & Redistribution Management System. Goodbye!
