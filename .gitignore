@@ -1,13 +1,65 @@
-# Build artifacts and binaries
+# =====================================================================
+# Git Ignore Configuration
+# Food Donation & Redistribution Management System
+# =====================================================================
+
+# Build artifacts & compiled binaries
 build/
+bin/
+obj/
 *.o
 *.obj
 *.exe
 *.out
+*.app
 foodbank
+foodbank.exe
+foodbank_asan
+foodbank_asan.exe
 test_*
+
+# Debug symbols & profiling outputs
 *.pdb
 *.ilk
 *.dSYM/
+*.suo
+*.idb
+*.gcov
+*.gcda
+*.gcno
+
+# Test runtime outputs & scratch files
+tests/temp_*
+tests/robustness_input.txt
+*.tmp
+*.temp
+*.log
+
+# IDE & Editor specific files
 .vscode/
 .idea/
+*.vcxproj*
+*.sln
+.vs/
+*.user
+*.cbp
+*.depend
+*.layout
+*.dev
+.clangd/
+.cache/
+
+# Operating system files
+[Tt]humbs.db
+ehthumbs.db
+[Dd]esktop.ini
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Package & archive files
+*.zip
+*.tar.gz
+*.7z

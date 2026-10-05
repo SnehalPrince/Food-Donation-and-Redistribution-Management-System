@@ -1,6 +1,13 @@
 # Food Donation and Redistribution Management System
 > A console-driven C++ Object-Oriented Programming mini project built for academic submission, evaluation, and viva defense.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![C++ Standard](https://img.shields.io/badge/C%2B%2B-11%20%7C%2017-blue.svg)](AGENTS.md)
+[![CI Build & Test](https://github.com/SnehalPrince/Food-Donation-and-Redistribution-Management-System/actions/workflows/ci.yml/badge.svg)](https://github.com/SnehalPrince/Food-Donation-and-Redistribution-Management-System/actions/workflows/ci.yml)
+[![SDG 2: Zero Hunger](https://img.shields.io/badge/SDG%202-Zero%20Hunger-DDA63A.svg)](https://sdgs.un.org/goals/goal2)
+[![SDG 12: Responsible Consumption](https://img.shields.io/badge/SDG%2012-Responsible%20Consumption-BF8B2E.svg)](https://sdgs.un.org/goals/goal12)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)](DISTRIBUTION.md)
+
 ---
 
 ## 1. Project Purpose & UN SDG Alignment
@@ -367,3 +374,27 @@ Total Completed Deliveries:         1
 1. **Console ASCII UI:** No graphical user interface; console layout is plain ASCII to maintain 100% compatibility across all legacy college lab terminals.
 2. **Single-User Architecture:** Designed as an in-memory single-process command-line tool; does not support concurrent multi-threaded writes or distributed network access.
 3. **AddressSanitizer on Windows MinGW:** MinGW-w64 on Windows does not bundle static `libasan`/`libubsan` runtimes. (Clean sanitization is available when compiling under Linux GCC / Clang).
+
+---
+
+## 10. Repository Resources & Governance
+
+| Document | Purpose |
+| -------- | ------- |
+| [LICENSE](LICENSE) | MIT Open Source License |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Contributor Covenant v2.1 Standards |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guide, coding standards, and pull request procedures |
+| [DISTRIBUTION.md](DISTRIBUTION.md) | Binary distribution, portable layout, and examiner evaluation packaging |
+| [SECURITY.md](SECURITY.md) | Security scope and vulnerability reporting instructions |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and milestone release logs |
+| [SUPPORT.md](SUPPORT.md) | Support contacts and academic defense inquiries |
+| [docs/VIVA_NOTES.md](docs/VIVA_NOTES.md) | 22 anticipated viva exam questions and detailed answers |
+| [docs/DECISIONS.md](docs/DECISIONS.md) | Architectural decision records (D1 through D10) |
+| [docs/TEST_REPORT.md](docs/TEST_REPORT.md) | Complete test suite execution matrix and verification evidence |
+| [docs/REVIEW.md](docs/REVIEW.md) | Independent code review against specifications |
+
+---
+
+## Maintainer
+
+- **Snehal Prince** — [@SnehalPrince](https://github.com/SnehalPrince)

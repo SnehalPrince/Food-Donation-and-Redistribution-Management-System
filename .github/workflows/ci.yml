@@ -1,0 +1,43 @@
+name: CI Build & Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: ${{ matrix.os }} | ${{ matrix.compiler }} | ${{ matrix.std }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        std: [c++11, c++17]
+        include:
+          - os: ubuntu-latest
+            compiler: g++
+          - os: windows-latest
+            compiler: g++
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup MinGW on Windows
+        if: runner.os == 'Windows'
+        uses: egor-trefilov/setup-mingw@v2
+        with:
+          platform: x64
+
+      - name: Compile and Run All Tests (${{ matrix.std }})
+        shell: bash
+        run: |
+          make clean
+          make STD=${{ matrix.std }} all test
+
+      - name: Run Viva Demo Scenario (${{ matrix.std }})
+        shell: bash
+        run: |
+          make STD=${{ matrix.std }} demo

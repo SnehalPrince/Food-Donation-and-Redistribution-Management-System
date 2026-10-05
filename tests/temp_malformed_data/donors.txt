@@ -1,3 +1,0 @@
-D001|Good Donor|1234|Restaurant
-MalformedLineWithoutPipes
-D002|Another Good|5678|Canteen
