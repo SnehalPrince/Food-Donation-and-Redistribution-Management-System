@@ -1,0 +1,13 @@
+# Build artifacts and binaries
+build/
+*.o
+*.obj
+*.exe
+*.out
+foodbank
+test_*
+*.pdb
+*.ilk
+*.dSYM/
+.vscode/
+.idea/
